@@ -15,11 +15,11 @@ class TasksController < ApplicationController
         @task = Task.new(task_params)
         if @task.save
          flash[:success] = 'Taskが正常に作成されました'
-         redirect_to @message
-       else
+         redirect_to @task
+        else
          flash.now[:danger] = 'Taskが作成されませんでした'
          render :new
-       end
+        end
     end
     
     def edit
