@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
     def index
         @tasks = Task.order(id: :desc).page(params[:page]).per(20)
+    end
     
     def show
         @task = Task.find(params[:id])
